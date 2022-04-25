@@ -1,31 +1,88 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <router-view></router-view>
+    <Tarbar>
+      <!--首页-->
+      <tarbar-item href="/home">
+        <template v-slot:icon>
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-home"></use>
+          </svg>
+        </template>
+        <template v-slot:active-icon>
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-home_fill"></use>
+          </svg>
+        </template>
+        <template v-slot:text>首页</template>
+      </tarbar-item>
+
+      <!--分类 -->
+      <tarbar-item href="/sort">
+        <template v-slot:icon>
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-sort"></use>
+          </svg>
+        </template>
+        <template v-slot:active-icon>
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-sort_fill"></use>
+          </svg>
+        </template>
+        <template v-slot:text>分类</template>
+      </tarbar-item>
+
+      <!--购物车 -->
+      <tarbar-item href="/cart">
+        <template v-slot:icon>
+         <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-cart"></use>
+          </svg>
+        </template>
+        <template v-slot:active-icon>
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-cart_fill"></use>
+          </svg>
+        </template>
+        <template v-slot:text>购物车</template>
+      </tarbar-item>
+
+      <!--我的-->
+      <tarbar-item href="/profile">
+        <template v-slot:icon>
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-profile"></use>
+          </svg>
+        </template>
+        <template v-slot:active-icon>
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-profile_fill"></use>
+          </svg>
+        </template>
+        <template v-slot:text>我的</template>
+      </tarbar-item>
+    </Tarbar>
   </div>
 </template>
-
+<script>
+import Tarbar from "components/common/Tarbar.vue";
+import TarbarItem from "components/content/TarbarItem.vue";
+export default {
+  components: {
+    Tarbar,
+    TarbarItem,
+  },
+};
+</script>
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-}
+@import "assets/css/common/reset.css";
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+.icon {
+  width: 25px;
+  height: 25px;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
 }
 </style>
