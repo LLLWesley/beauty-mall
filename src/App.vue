@@ -65,7 +65,7 @@
   </div>
 </template>
 <script>
-import Tarbar from "components/common/Tarbar.vue";
+import Tarbar from "components/common/tarbar/Tarbar.vue";
 import TarbarItem from "components/content/TarbarItem.vue";
 export default {
   components: {

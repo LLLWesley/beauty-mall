@@ -12,5 +12,5 @@ new Vue({
 }).$mount('#app')
 
 //引入阿里巴巴图标
-import "assets/icon/iconfont.css";
-import "assets/icon/iconfont.js";
+import "@/assets/icon/iconfont.css";
+import "@/assets/icon/iconfont.js";
