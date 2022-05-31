@@ -1,8 +1,8 @@
 <template>
   <div class="navbar">
-    <div class="left-item"><slot name="left"></slot></div>
-    <div class="center-item"><slot name="center"></slot></div>
-    <div class="right-item"><slot name="right"></slot></div>
+    <div class="navbar-left"><slot name="navbar-left"></slot></div>
+    <div class="navbar-center"><slot name="navbar-center"></slot></div>
+    <div class="navbar-right"><slot name="navbar-right"></slot></div>
   </div>
 </template>
 
@@ -26,13 +26,14 @@ export default {
 <style>
   .navbar{
     display: flex;
+    flex-flow: row flow;
     text-align: center;
     line-height: 44px;
   }
-  .left-item,.right-item{
+  .navbar-left,.navbar-right{
     width: 60px;
   }
-  .center-item{
+  .navbar-center{
     flex: 1;
   }
 </style>

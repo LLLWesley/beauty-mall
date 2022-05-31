@@ -1,7 +1,7 @@
 <template>
   <div class="swiper">
     <div class="swiper-container" :style="containerStyle" @click="switchPage(true)">
-      <slot name="photos"></slot>
+      <slot name="swiper-items"></slot>
     </div>
   </div>
 </template>
