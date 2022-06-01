@@ -1,6 +1,6 @@
 <template>
   <div class="tab-control">
-    <div class="tab-control-item" v-for="(name, index) in itemNames" :key="index">
+    <div class="tab-control-item" v-for="(name, index) in tabNames" :key="index">
       <span class="item-name" :class="{ name_active: activeIdx === index }" @click="changeActive(index)">
         {{ name }}
       </span>
@@ -12,7 +12,7 @@
 export default {
   components: {},
   props: {
-    itemNames: {
+    tabNames: {
       type: Array,
       default() {
         return []

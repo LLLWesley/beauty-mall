@@ -1,12 +1,13 @@
 <template>
   <div id="home">
     <navbar class="navbar">
-      <template v-slot:navbar-center>
-        购物街
-      </template>
+      <template v-slot:navbar-center>购物街</template>
     </navbar>
     <HomeSwiper :banner="banner" />
-    <GoodList :good="good"/>
+    <tab-control 
+      :tabNames = "['时尚','新潮','促销']"
+      @type-change ="changeCurType"/>
+    <GoodList :goods="curGoodList"/>
   </div>
 
 </template>
@@ -32,7 +33,8 @@ export default {
   data() {
     return {
       banner: [],
-      good: {
+      activeType:'pop',   //正在展示的tab
+      goodsData: {
         'pop':{
           page:0,
           list:[]
@@ -50,12 +52,34 @@ export default {
   },
   watch: {},
   computed: {
+    curGoodList(){
+      return this.goodsData[this.activeType].list
+    }
   },
   methods: {
+    /*
+     *监听事件方法  
+    */
+    changeCurType(activeIdx){
+       switch(activeIdx){
+        case 0:
+          this.activeType = 'pop'
+          break;
+        case 1:
+          this.activeType = 'new'
+          break;
+        case 2:
+          this.activeType = 'sell'
+          break;
+      }
+    },
+    /*
+     * 网络请求方法
+    */
     //获取商品数据
     getGoodsData(type, page) {
       getGoodsData(type,page).then((res) => {
-        this.good[type].list.push(...res.data.list)
+        this.goodsData[type].list.push(...res.data.list)
       });
     },
     //获取首页的多项数据
