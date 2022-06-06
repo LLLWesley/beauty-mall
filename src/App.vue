@@ -35,7 +35,7 @@
       <!--购物车 -->
       <tarbar-item href="/cart">
         <template v-slot:icon>
-         <svg class="icon" aria-hidden="true">
+          <svg class="icon" aria-hidden="true">
             <use xlink:href="#icon-cart"></use>
           </svg>
         </template>
@@ -77,6 +77,19 @@ export default {
 <style>
 @import "assets/css/common/reset.css";
 
+#app {
+  display: flex;
+  flex-flow: column nowrap;
+  height: 100vh;
+}
+
+.view-wrapper {
+  height: 0;
+  flex: 1;
+  margin-bottom: 49px;
+  display: flex;
+  flex-direction: column;
+}
 
 .icon {
   width: 25px;

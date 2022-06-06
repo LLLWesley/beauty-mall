@@ -29,22 +29,27 @@ export default {
   methods: {
 
   },
-  created() { },
-  mounted() { }
+  created() {
+  },
+  mounted() {
+  }
 };
 </script>
 <style scoped>
-.good-list{
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  padding:0 10px;
+.good-list {
+  top: 44px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  overflow: hidden;
+  column-count: 2;
+  padding: 10px;
+  background-color: rgb(242, 242, 242);
 }
 
 .good-list .item-container {
-  width: 49%;
   margin-bottom: 10px;
-  border-radius: 5px;
   overflow: hidden;
 }
 </style>
