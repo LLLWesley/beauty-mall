@@ -37,19 +37,17 @@ export default {
 </script>
 <style scoped>
 .good-list {
-  top: 44px;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  position: absolute;
-  overflow: hidden;
-  column-count: 2;
+  display: flex;
+  flex-flow: row wrap;
   padding: 10px;
   background-color: rgb(242, 242, 242);
 }
 
 .good-list .item-container {
+  width: 49%;
   margin-bottom: 10px;
-  overflow: hidden;
 }
+.item-container:nth-child(2n+0){
+  margin-left: 2%;
+} 
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="good-list-item">
-    <img :src="item.show.img" class="item-img" alt="">
+    <img :src="item.show.img" class="item-img" alt="" @load=refresh>
     <div class="item-info">
       <span class="item-title">{{item.title}}</span>
       <p class="item-price">{{item.price}}</p>
@@ -26,10 +26,14 @@ export default {
   },
   watch: {},
   computed: {},
-  methods: {},
-  created() {},
+  methods: {
+    refresh: function(){
+      this.$bus.$emit('refleshScroll')
+    }
+  },
+  created() {
+  },
   mounted() {
-    
   }
 };
 </script>

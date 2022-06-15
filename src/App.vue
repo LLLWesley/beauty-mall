@@ -72,23 +72,18 @@ export default {
     Tarbar,
     TarbarItem,
   },
+  mounted(){
+    // console.log(this);
+  }
 };
 </script>
 <style>
 @import "assets/css/common/reset.css";
 
 #app {
-  display: flex;
-  flex-flow: column nowrap;
+  box-sizing: border-box;
   height: 100vh;
-}
-
-.view-wrapper {
-  height: 0;
-  flex: 1;
-  margin-bottom: 49px;
-  display: flex;
-  flex-direction: column;
+  padding-bottom: 49px;
 }
 
 .icon {
